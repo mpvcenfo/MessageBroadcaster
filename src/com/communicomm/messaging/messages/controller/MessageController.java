@@ -14,9 +14,8 @@ public class MessageController {
 
 	public void listMessage(MessageNumber messageOption) {
 		for(Message currentMessage: messages) {
-			currentMessage.toString();
-			if(currentMessage.getMessageNumber() == messageOption) {
-				
+			if(currentMessage.getMessageNumber().equals(messageOption)) {
+			System.out.println(currentMessage.toString());
 			}
 		}
 	}
