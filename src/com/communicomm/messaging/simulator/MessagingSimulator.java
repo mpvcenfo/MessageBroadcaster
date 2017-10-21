@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.communicom.messaging.messages.utils.MessageNumber;
 import com.communicomm.messaging.messages.controller.MessageController;
 
 public class MessagingSimulator {
@@ -22,7 +23,7 @@ public class MessagingSimulator {
 			printOptions();
 			option = getAction();
 			processOption(option);
-		} while (option != 4);
+		} while (option != 3);
 	}
 
 	private static void printOptions() {
@@ -39,11 +40,12 @@ public class MessagingSimulator {
 
 	private static void processOption(int option) throws Exception  {
 		int messageOption = askForOptions();
+		
 		if (option == 1){
-			messageController.sendMessage(messageOption);	
+			messageController.sendMessage(MessageNumber.values()[messageOption-1]);
 		}
 		if (option == 2){
-			messageController.listMessage(messageOption);	
+			messageController.listMessage(MessageNumber.values()[messageOption-1]);	
 		}
 		
 	}
@@ -53,6 +55,8 @@ public class MessagingSimulator {
 		System.out.println("2. Ping Server Response");
 		System.out.println("3. Set Wait For Signal Request");
 		System.out.println("4. Set Wait For Signal Response");
+		System.out.println("5. Bootstrap Operation Request");
+		System.out.println("6. Bootstrap Operation Response");
 		return Integer.parseInt(br.readLine());
 	}	
 	
