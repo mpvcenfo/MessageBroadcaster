@@ -27,8 +27,10 @@ public class BootstrapOperationResponse extends Message {
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
+	
 	public BootstrapOperationResponse() {
 		super();
+		this.messageName = "Bootstrap Operation Response";
 		this.messageNumber = MessageNumber.BootstrapOperationResponse;
 	}
 }

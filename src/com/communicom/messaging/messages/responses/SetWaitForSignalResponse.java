@@ -8,10 +8,6 @@ public class SetWaitForSignalResponse extends Message {
 	private SignalType signal;
 	private String signalExpectedValue;
 	private String signalReceivedValue;
-	
-	public SetWaitForSignalResponse(){
-		this.messageNumber = MessageNumber.SetWaitForSignalResponse;
-	}
 
 	public SignalType getSignal() {
 		return signal;
@@ -35,5 +31,11 @@ public class SetWaitForSignalResponse extends Message {
 
 	public void setSignalReceivedValue(String signalReceivedValue) {
 		this.signalReceivedValue = signalReceivedValue;
+	}
+	
+	public SetWaitForSignalResponse(){
+		super();
+		this.messageName = "Set Wait For Signal Response";
+		this.messageNumber = MessageNumber.SetWaitForSignalResponse;
 	}
 }

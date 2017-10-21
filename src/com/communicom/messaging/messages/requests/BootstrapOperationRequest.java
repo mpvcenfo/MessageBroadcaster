@@ -15,6 +15,7 @@ public class BootstrapOperationRequest extends Message {
 
 	public BootstrapOperationRequest() {
 		super();
+		this.messageName = "Bootstrap Operation Request";
 		this.messageNumber = MessageNumber.BootstrapOperationRequest;
 	}
 }
